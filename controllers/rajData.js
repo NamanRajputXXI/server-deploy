@@ -1,9 +1,14 @@
 const Rajasthan = require("../models/rajData");
+const Himachal = require("../models/himachalData");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
 const getAllData = asyncWrapper(async (req, res) => {
   const data = await Rajasthan.find({});
+  res.status(200).json({ data });
+});
+const getHimachalData = asyncWrapper(async (req, res) => {
+  const data = await Himachal.find({});
   res.status(200).json({ data });
 });
 const getHomeData = asyncWrapper(async (req, res) => {
@@ -13,4 +18,5 @@ const getHomeData = asyncWrapper(async (req, res) => {
 module.exports = {
   getAllData,
   getHomeData,
+  getHimachalData,
 };
