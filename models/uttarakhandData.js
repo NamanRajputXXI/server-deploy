@@ -12,23 +12,40 @@ const itinerarySchema = new mongoose.Schema({
   bulletPoints: [String],
 });
 
-const RajasthanSchema = new mongoose.Schema({
+const UttarakhandSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   heading: String,
   subHeading: String,
+  numberOfPhotos: Number,
   duration: String,
   maxPeople: Number,
   minAge: String,
   pickup: String,
   overview: String,
-  exclusions: [String],
-  inclusion: [String],
+  exclusion1: String,
+  exclusion2: String,
+  exclusion3: String,
+  exclusion4: String,
+  inclusion1: String,
+  inclusion2: String,
+  inclusion3: String,
+  inclusion4: String,
   reviews: [reviewSchema],
   mapSrc: String,
   reviewHeading: String,
+  adultPrice: String,
+  babyPrice: String,
+  childPrice: String,
+  discount: String,
+  endDate: String,
+  homePickupAdultPrice: String,
+  homePickupBabyPrice: String,
+  homePickupChildPrice: String,
+  minMax: String,
   previousPrice: String,
   price: String,
+  startDate: String,
   itinerary: [itinerarySchema],
 });
 
-module.exports = mongoose.model("Rajasthan", RajasthanSchema);
+module.exports = mongoose.model("Uttarakhand", UttarakhandSchema);

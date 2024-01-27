@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const connectDB = require("./db/connect");
-const data = require("./routes/rajData");
+const data = require("./routes/allRoutes");
 const notfound = require("./middleware/notfound");
 const errorHandlerMiddleware = require("./middleware/errorhandler");
 require("dotenv").config();

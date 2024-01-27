@@ -5,10 +5,12 @@ const {
   getAllData,
   getHomeData,
   getHimachalData,
-} = require("../controllers/rajData");
+  getUttarakhandData,
+} = require("../controllers/allStatesData");
 
 router.route("/getRajasthanData").get(getAllData);
 router.route("/getHimachalData").get(getHimachalData);
+router.route("/getUttarakhandData").get(getUttarakhandData);
 
 router.route("/").get(getHomeData);
 
