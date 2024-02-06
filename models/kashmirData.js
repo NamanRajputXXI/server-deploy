@@ -12,7 +12,7 @@ const itinerarySchema = new mongoose.Schema({
   bulletPoints: [String],
 });
 
-const RajasthanSchema = new mongoose.Schema({
+const KashmirSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   heading: String,
   subHeading: String,
@@ -31,4 +31,4 @@ const RajasthanSchema = new mongoose.Schema({
   itinerary: [itinerarySchema],
 });
 
-module.exports = mongoose.model("Rajasthan", RajasthanSchema);
+module.exports = mongoose.model("Kashmir", KashmirSchema);
