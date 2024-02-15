@@ -41,6 +41,42 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
   });
 });
 
+const getSpecificDocument = asyncWrapper(async (req, res) => {
+  const { category, index } = req.params;
+
+  let collection;
+  switch (category) {
+    case "rajasthan":
+      collection = Rajasthan;
+      break;
+    case "himachal":
+      collection = Himachal;
+      break;
+    case "uttarakhand":
+      collection = Uttarakhand;
+      break;
+    case "kashmir":
+      collection = Kashmir;
+      break;
+    default:
+      return res.status(404).json({ message: "Category not found" });
+  }
+
+  const parsedIndex = parseInt(index);
+
+  if (isNaN(parsedIndex) || parsedIndex < 0) {
+    return res.status(400).json({ message: "Invalid index" });
+  }
+
+  const data = await collection.findOne({}).skip(parsedIndex).limit(1);
+
+  if (!data) {
+    return res.status(404).json({ message: "Document not found" });
+  }
+
+  res.status(200).json({ data });
+});
+
 module.exports = {
   getRajasthanData,
   getHomeData,
@@ -48,4 +84,5 @@ module.exports = {
   getUttarakhandData,
   getKashmirData,
   getAllStatesData,
+  getSpecificDocument,
 };
