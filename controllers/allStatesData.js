@@ -27,6 +27,19 @@ const getKashmirData = asyncWrapper(async (req, res) => {
 const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
 });
+const getAllStatesData = asyncWrapper(async (req, res) => {
+  const rajasthanData = await Rajasthan.find({});
+  const himachalData = await Himachal.find({});
+  const uttarakhandData = await Uttarakhand.find({});
+  const kashmirData = await Kashmir.find({});
+
+  res.status(200).json({
+    rajasthanData,
+    himachalData,
+    uttarakhandData,
+    kashmirData,
+  });
+});
 
 module.exports = {
   getRajasthanData,
@@ -34,4 +47,5 @@ module.exports = {
   getHimachalData,
   getUttarakhandData,
   getKashmirData,
+  getAllStatesData,
 };
