@@ -28,16 +28,16 @@ const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
 });
 const getAllStatesData = asyncWrapper(async (req, res) => {
-  const rajasthanData = await Rajasthan.find({});
-  const himachalData = await Himachal.find({});
-  const uttarakhandData = await Uttarakhand.find({});
-  const kashmirData = await Kashmir.find({});
+  const rajasthan = await Rajasthan.find({});
+  const himachal = await Himachal.find({});
+  const uttarakhand = await Uttarakhand.find({});
+  const kashmir = await Kashmir.find({});
 
   res.status(200).json({
-    rajasthanData,
-    himachalData,
-    uttarakhandData,
-    kashmirData,
+    rajasthan,
+    himachal,
+    uttarakhand,
+    kashmir,
   });
 });
 
