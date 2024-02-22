@@ -2,6 +2,7 @@ const Rajasthan = require("../models/rajData");
 const Himachal = require("../models/himachalData");
 const Uttarakhand = require("../models/uttarakhandData");
 const Kashmir = require("../models/kashmirData");
+const Kerala = require("../models/keralaData");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
@@ -23,6 +24,10 @@ const getKashmirData = asyncWrapper(async (req, res) => {
   const data = await Kashmir.find({});
   res.status(200).json({ data });
 });
+const getKeralaData = asyncWrapper(async (req, res) => {
+  const data = await Kerala.find({});
+  res.status(200).json({ data });
+});
 
 const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
@@ -32,12 +37,14 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
   const himachal = await Himachal.find({});
   const uttarakhand = await Uttarakhand.find({});
   const kashmir = await Kashmir.find({});
+  const kerala = await Kerala.find({});
 
   res.status(200).json({
     rajasthan,
     himachal,
     uttarakhand,
     kashmir,
+    Kerala,
   });
 });
 
@@ -57,6 +64,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "kashmir":
       collection = Kashmir;
+      break;
+    case "kerala":
+      collection = Kerala;
       break;
     default:
       return res.status(404).json({ message: "Category not found" });
@@ -85,4 +95,5 @@ module.exports = {
   getKashmirData,
   getAllStatesData,
   getSpecificDocument,
+  getKeralaData,
 };
