@@ -44,7 +44,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
     himachal,
     uttarakhand,
     kashmir,
-    Kerala,
+    kerala,
   });
 });
 
