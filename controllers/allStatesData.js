@@ -3,6 +3,7 @@ const Himachal = require("../models/himachalData");
 const Uttarakhand = require("../models/uttarakhandData");
 const Kashmir = require("../models/kashmirData");
 const Kerala = require("../models/keralaData");
+const Andaman = require("../models/andamanData");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
@@ -28,6 +29,10 @@ const getKeralaData = asyncWrapper(async (req, res) => {
   const data = await Kerala.find({});
   res.status(200).json({ data });
 });
+const getAndamanData = asyncWrapper(async (req, res) => {
+  const data = await Andaman.find({});
+  res.status(200).json({ data });
+});
 
 const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
@@ -38,6 +43,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
   const uttarakhand = await Uttarakhand.find({});
   const kashmir = await Kashmir.find({});
   const kerala = await Kerala.find({});
+  const andaman = await Andaman.find({});
 
   res.status(200).json({
     rajasthan,
@@ -45,6 +51,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
     uttarakhand,
     kashmir,
     kerala,
+    andaman,
   });
 });
 
@@ -67,6 +74,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "kerala":
       collection = Kerala;
+      break;
+    case "andaman":
+      collection = Andaman;
       break;
     default:
       return res.status(404).json({ message: "Category not found" });
@@ -96,4 +106,5 @@ module.exports = {
   getAllStatesData,
   getSpecificDocument,
   getKeralaData,
+  getAndamanData,
 };
