@@ -35,7 +35,7 @@ const getAndamanData = asyncWrapper(async (req, res) => {
 });
 const getGujratData = asyncWrapper(async (req, res) => {
   const data = await Gujrat.find({});
-  res.json(200).json({ data });
+  res.status(200).json({ data });
 });
 
 const getHomeData = asyncWrapper(async (req, res) => {
