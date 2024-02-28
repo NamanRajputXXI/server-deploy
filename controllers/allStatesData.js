@@ -10,7 +10,6 @@ const { createCustomError } = require("../errors/custom-error");
 
 const getRajasthanData = asyncWrapper(async (req, res) => {
   const data = await Rajasthan.find({});
-
   res.status(200).json({ data });
 });
 
@@ -36,7 +35,7 @@ const getAndamanData = asyncWrapper(async (req, res) => {
 });
 const getGujratData = asyncWrapper(async (req, res) => {
   const data = await Gujrat.find({});
-  res.status(200).json({ data });
+  res.json(200).json({ data });
 });
 
 const getHomeData = asyncWrapper(async (req, res) => {
@@ -87,6 +86,7 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "gujrat":
       collection = Gujrat;
+      break;
     default:
       return res.status(404).json({ message: "Category not found" });
   }
