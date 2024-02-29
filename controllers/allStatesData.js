@@ -8,6 +8,7 @@ const Gujrat = require("../models/gujratData");
 const Sikkim = require("../models/sikkimData");
 const Goa = require("../models/goaData");
 const Delhi = require("../models/delhiData");
+const Punjab = require("../models/punjabData");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
@@ -52,6 +53,10 @@ const getDelhiData = asyncWrapper(async (req, res) => {
   const data = await Delhi.find({});
   res.status(200).json({ data });
 });
+const getPunjabData = asyncWrapper(async (req, res) => {
+  const data = await Punjab.find({});
+  res.status(200).json({ data });
+});
 
 const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
@@ -67,6 +72,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
   const sikkim = await Sikkim.find({});
   const goa = await Goa.find({});
   const delhi = await Delhi.find({});
+  const punjab = await Punjab.find({});
 
   res.status(200).json({
     rajasthan,
@@ -79,6 +85,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
     sikkim,
     goa,
     delhi,
+    punjab,
   });
 });
 
@@ -117,6 +124,11 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
     case "delhi":
       collection = Delhi;
       break;
+
+    case "punjab":
+      collection = Punjab;
+      break;
+
     default:
       return res.status(404).json({ message: "Category not found" });
   }
@@ -150,4 +162,5 @@ module.exports = {
   getSikkimData,
   getGoaData,
   getDelhiData,
+  getPunjabData,
 };
