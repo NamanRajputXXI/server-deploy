@@ -62,7 +62,7 @@ const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
 });
 const getAllStatesData = asyncWrapper(async (req, res) => {
-  const rajasthan = await Rajasthan.find({});
+  const Rajasthan = await Rajasthan.find({});
   const himachal = await Himachal.find({});
   const uttarakhand = await Uttarakhand.find({});
   const kashmir = await Kashmir.find({});
@@ -75,7 +75,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
   const punjab = await Punjab.find({});
 
   res.status(200).json({
-    rajasthan,
+    Rajasthan,
     himachal,
     uttarakhand,
     kashmir,
@@ -94,7 +94,7 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
 
   let collection;
   switch (category) {
-    case "rajasthan":
+    case "Rajasthan":
       collection = Rajasthan;
       break;
     case "himachal":
