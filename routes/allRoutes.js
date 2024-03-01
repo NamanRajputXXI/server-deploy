@@ -18,7 +18,7 @@ const {
   getPunjabData,
 } = require("../controllers/allStatesData");
 
-router.route("/Rajasthan").get(getRajasthanData);
+router.route("/rajasthan").get(getRajasthanData);
 router.route("/himachal").get(getHimachalData);
 router.route("/uttarakhand").get(getUttarakhandData);
 router.route("/kashmir").get(getKashmirData);
