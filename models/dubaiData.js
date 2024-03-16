@@ -23,6 +23,7 @@ const DubaiSchema = new mongoose.Schema({
   overview: String,
   exclusions: [String],
   inclusions: [String],
+  visaPolicy: [String],
   reviews: [reviewSchema],
   mapSrc: String,
   reviewHeading: String,
