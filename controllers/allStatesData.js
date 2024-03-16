@@ -95,7 +95,6 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
 });
 
 const getInternationalData = asyncWrapper(async (req, res) => {
-  const punjab = await Punjab.find({});
   const dubai = await Dubai.find({});
 
   res.status(200).json({
@@ -143,32 +142,10 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       collection = Punjab;
       break;
 
-    default:
-      return res.status(404).json({ message: "Category not found" });
-  }
-
-  const parsedIndex = parseInt(index);
-
-  if (isNaN(parsedIndex) || parsedIndex < 0) {
-    return res.status(400).json({ message: "Invalid index" });
-  }
-
-  const data = await collection.findOne({}).skip(parsedIndex).limit(1);
-
-  if (!data) {
-    return res.status(404).json({ message: "Document not found" });
-  }
-
-  res.status(200).json({ data });
-});
-const getSpecificDocumentForInternational = asyncWrapper(async (req, res) => {
-  const { category, index } = req.params;
-
-  let collection;
-  switch (category) {
     case "dubai":
       collection = Dubai;
       break;
+
     default:
       return res.status(404).json({ message: "Category not found" });
   }
@@ -192,7 +169,6 @@ module.exports = {
   getRajasthanData,
   getHomeData,
   getDubaiData,
-  getSpecificDocumentForInternational,
   getHimachalData,
   getUttarakhandData,
   getKashmirData,

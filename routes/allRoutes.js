@@ -18,6 +18,7 @@ const {
   getPunjabData,
   getInternationalData,
   getDubaiData,
+  getSpecificDocumentForInternational,
 } = require("../controllers/allStatesData");
 
 router.route("/rajasthan").get(getRajasthanData);
