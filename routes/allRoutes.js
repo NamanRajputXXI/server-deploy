@@ -44,7 +44,7 @@ router.route("/getGoaData").get(getGoaData);
 router.route("/getDelhiData").get(getDelhiData);
 router.route("/getPunjabata").get(getPunjabData);
 router.route("/allStatesData").get(getAllStatesData);
-router.route("internationalData").get(getInternationalData);
+router.route("/internationalData").get(getInternationalData);
 router.route("/:category/:index").get(getSpecificDocument);
 router.route("/").get(getHomeData);
 
