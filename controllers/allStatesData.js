@@ -9,6 +9,7 @@ const Sikkim = require("../models/sikkimData");
 const Goa = require("../models/goaData");
 const Delhi = require("../models/delhiData");
 const Punjab = require("../models/punjabData");
+const Dubai = require("../models/dubaiData");
 const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
@@ -57,6 +58,10 @@ const getPunjabData = asyncWrapper(async (req, res) => {
   const data = await Punjab.find({});
   res.status(200).json({ data });
 });
+const getDubaiData = asyncWrapper(async (req, res) => {
+  const data = await Dubai.find({});
+  res.status(200).json({ data });
+});
 
 const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
@@ -86,6 +91,15 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
     goa,
     delhi,
     punjab,
+  });
+});
+
+const getInternationalData = asyncWrapper(async (req, res) => {
+  const punjab = await Punjab.find({});
+  const dubai = await Dubai.find({});
+
+  res.status(200).json({
+    dubai,
   });
 });
 
@@ -147,14 +161,43 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
 
   res.status(200).json({ data });
 });
+const getSpecificDocumentForInternational = asyncWrapper(async (req, res) => {
+  const { category, index } = req.params;
+
+  let collection;
+  switch (category) {
+    case "dubai":
+      collection = Dubai;
+      break;
+    default:
+      return res.status(404).json({ message: "Category not found" });
+  }
+
+  const parsedIndex = parseInt(index);
+
+  if (isNaN(parsedIndex) || parsedIndex < 0) {
+    return res.status(400).json({ message: "Invalid index" });
+  }
+
+  const data = await collection.findOne({}).skip(parsedIndex).limit(1);
+
+  if (!data) {
+    return res.status(404).json({ message: "Document not found" });
+  }
+
+  res.status(200).json({ data });
+});
 
 module.exports = {
   getRajasthanData,
   getHomeData,
+  getDubaiData,
+  getSpecificDocumentForInternational,
   getHimachalData,
   getUttarakhandData,
   getKashmirData,
   getAllStatesData,
+  getInternationalData,
   getSpecificDocument,
   getKeralaData,
   getAndamanData,
