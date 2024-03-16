@@ -9,7 +9,6 @@ const reviewSchema = new mongoose.Schema({
 const itinerarySchema = new mongoose.Schema({
   day: String,
   heading: String,
-  bulletPoints: [String],
 });
 
 const DubaiSchema = new mongoose.Schema({
@@ -17,13 +16,8 @@ const DubaiSchema = new mongoose.Schema({
   heading: String,
   subHeading: String,
   duration: String,
-  maxPeople: Number,
-  minAge: String,
-  pickup: String,
-  overview: String,
   exclusions: [String],
   inclusions: [String],
-  visaPolicy: [String],
   reviews: [reviewSchema],
   mapSrc: String,
   reviewHeading: String,
