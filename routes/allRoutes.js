@@ -20,6 +20,7 @@ const {
   getDubaiData,
   getWestBengalData,
   getBaliData,
+  getThailandData,
   getSpecificDocumentForInternational,
 } = require("../controllers/allStatesData");
 
@@ -37,6 +38,7 @@ router.route("/punjab").get(getPunjabData);
 router.route("/westBengal").get(getWestBengalData);
 router.route("/dubai").get(getDubaiData);
 router.route("/bali").get(getBaliData);
+router.route("/thailand").get(getThailandData);
 router.route("/getRajasthanData").get(getRajasthanData);
 router.route("/getHimachalData").get(getHimachalData);
 router.route("/getUttarakhandData").get(getUttarakhandData);
