@@ -70,7 +70,7 @@ const getBaliData = asyncWrapper(async (req, res) => {
   res.status(200).json({ data });
 });
 const getThailandData = asyncWrapper(async (req, res) => {
-  const data = await Bali.find({});
+  const data = await Thailand.find({});
   res.status(200).json({ data });
 });
 const getDubaiData = asyncWrapper(async (req, res) => {
