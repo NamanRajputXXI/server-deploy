@@ -113,7 +113,7 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
   const { category, index } = req.params;
 
   let collection;
-  switch (category) {
+  switch (category.toLowerCase()) {
     case "rajasthan":
       collection = Rajasthan;
       break;
@@ -144,17 +144,15 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
     case "delhi":
       collection = Delhi;
       break;
-
     case "punjab":
       collection = Punjab;
       break;
-
     case "dubai":
       collection = Dubai;
       break;
-    case "westBengal":
+    case "westbengal":
       collection = WestBengal;
-
+      break;
     default:
       return res.status(404).json({ message: "Category not found" });
   }

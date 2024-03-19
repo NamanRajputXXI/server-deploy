@@ -33,7 +33,7 @@ router.route("/sikkim").get(getSikkimData);
 router.route("/goa").get(getGoaData);
 router.route("/delhi").get(getDelhiData);
 router.route("/punjab").get(getPunjabData);
-router.route("/westbengal").get(getWestBengalData);
+router.route("/westBengal").get(getWestBengalData);
 router.route("/dubai").get(getDubaiData);
 router.route("/getRajasthanData").get(getRajasthanData);
 router.route("/getHimachalData").get(getHimachalData);
