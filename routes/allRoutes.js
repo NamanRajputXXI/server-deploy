@@ -22,6 +22,7 @@ const {
   getDubaiData,
   getBaliData,
   getThailandData,
+  getSingaporeData,
 } = require("../controllers/international/internationData");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -43,6 +44,7 @@ router.route("/westBengal").get(getWestBengalData);
 router.route("/dubai").get(getDubaiData);
 router.route("/bali").get(getBaliData);
 router.route("/thailand").get(getThailandData);
+router.route("/singapore").get(getSingaporeData);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
