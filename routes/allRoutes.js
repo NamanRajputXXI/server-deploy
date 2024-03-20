@@ -8,7 +8,6 @@ const {
   getUttarakhandData,
   getKashmirData,
   getAllStatesData,
-  getSpecificDocument,
   getKeralaData,
   getAndamanData,
   getGujratData,
@@ -16,13 +15,17 @@ const {
   getGoaData,
   getDelhiData,
   getPunjabData,
+  getWestBengalData,
+} = require("../controllers/domestic/allStatesData");
+const {
   getInternationalData,
   getDubaiData,
-  getWestBengalData,
   getBaliData,
   getThailandData,
-} = require("../controllers/allStatesData");
+} = require("../controllers/international/internationData");
+const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
+// routes for domestic destinations
 router.route("/rajasthan").get(getRajasthanData);
 router.route("/himachal").get(getHimachalData);
 router.route("/uttarakhand").get(getUttarakhandData);
@@ -35,20 +38,11 @@ router.route("/goa").get(getGoaData);
 router.route("/delhi").get(getDelhiData);
 router.route("/punjab").get(getPunjabData);
 router.route("/westBengal").get(getWestBengalData);
+
+//routes for international destination
 router.route("/dubai").get(getDubaiData);
 router.route("/bali").get(getBaliData);
 router.route("/thailand").get(getThailandData);
-router.route("/getRajasthanData").get(getRajasthanData);
-router.route("/getHimachalData").get(getHimachalData);
-router.route("/getUttarakhandData").get(getUttarakhandData);
-router.route("/getKeralaData").get(getKeralaData);
-router.route("/getKashmirData").get(getKashmirData);
-router.route("/getAndamanData").get(getAndamanData);
-router.route("/getGujratData").get(getGujratData);
-router.route("/getSikkimData").get(getSikkimData);
-router.route("/getGoaData").get(getGoaData);
-router.route("/getDelhiData").get(getDelhiData);
-router.route("/getPunjabata").get(getPunjabData);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
