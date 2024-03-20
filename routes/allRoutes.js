@@ -21,7 +21,6 @@ const {
   getWestBengalData,
   getBaliData,
   getThailandData,
-  getSpecificDocumentForInternational,
 } = require("../controllers/allStatesData");
 
 router.route("/rajasthan").get(getRajasthanData);
