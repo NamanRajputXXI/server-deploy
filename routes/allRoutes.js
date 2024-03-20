@@ -17,6 +17,7 @@ const {
   getPunjabData,
   getWestBengalData,
   getOdishaData,
+  getLadakhData,
 } = require("../controllers/domestic/allStatesData");
 const {
   getInternationalData,
@@ -41,6 +42,7 @@ router.route("/delhi").get(getDelhiData);
 router.route("/punjab").get(getPunjabData);
 router.route("/westBengal").get(getWestBengalData);
 router.route("/odisha").get(getOdishaData);
+router.route("/ladakh").get(getLadakhData);
 
 //routes for international destination
 router.route("/dubai").get(getDubaiData);

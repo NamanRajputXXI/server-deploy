@@ -12,6 +12,7 @@ const Punjab = require("../models/domestic/punjabData");
 const Dubai = require("../models/international/dubaiData");
 const WestBengal = require("../models/domestic/westBengalData");
 const Odisha = require("../models/domestic/odishaData");
+const Ladakh = require("../models/domestic/ladakhData");
 const Bali = require("../models/international/baliData");
 const Thailand = require("../models/international/thailandData");
 const Singapore = require("../models/international/singaporeData");
@@ -64,6 +65,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "odisha":
       collection = Odisha;
+      break;
+    case "ladakh":
+      collection = Ladakh;
       break;
     case "bali":
       collection = Bali;
