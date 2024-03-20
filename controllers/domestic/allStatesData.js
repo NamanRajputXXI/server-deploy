@@ -10,6 +10,7 @@ const Goa = require("../../models/domestic/goaData");
 const Delhi = require("../../models/domestic/delhiData");
 const Punjab = require("../../models/domestic/punjabData");
 const WestBengal = require("../../models/domestic/westBengalData");
+const Odisha = require("../../models/domestic/odishaData");
 const asyncWrapper = require("../../middleware/async");
 
 const getRajasthanData = asyncWrapper(async (req, res) => {
@@ -61,6 +62,10 @@ const getWestBengalData = asyncWrapper(async (req, res) => {
   const data = await WestBengal.find({});
   res.status(200).json({ data });
 });
+const getOdishaData = asyncWrapper(async (req, res) => {
+  const data = await Odisha.find({});
+  res.status(200).json({ data });
+});
 
 const getHomeData = asyncWrapper(async (req, res) => {
   res.status(200).send("go to /getRajasthanData");
@@ -78,6 +83,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
   const delhi = await Delhi.find({});
   const punjab = await Punjab.find({});
   const westBengal = await WestBengal.find({});
+  const odisha = await Odisha.find({});
 
   res.status(200).json({
     rajasthan,
@@ -92,6 +98,7 @@ const getAllStatesData = asyncWrapper(async (req, res) => {
     delhi,
     punjab,
     westBengal,
+    odisha,
   });
 });
 
@@ -110,4 +117,5 @@ module.exports = {
   getDelhiData,
   getPunjabData,
   getWestBengalData,
+  getOdishaData,
 };
