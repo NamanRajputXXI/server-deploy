@@ -3,6 +3,8 @@ const Thailand = require("../../models/international/thailandData");
 const Dubai = require("../../models/international/dubaiData");
 const Singapore = require("../../models/international/singaporeData");
 const Bhutan = require("../../models/international/bhutanData");
+const Nepal = require("../../models/international/nepalData");
+
 const asyncWrapper = require("../../middleware/async");
 
 const getBaliData = asyncWrapper(async (req, res) => {
@@ -25,6 +27,10 @@ const getBhutanData = asyncWrapper(async (req, res) => {
   const data = await Bhutan.find({});
   res.status(200).json({ data });
 });
+const getNepalData = asyncWrapper(async (req, res) => {
+  const data = await Nepal.find({});
+  res.status(200).json({ data });
+});
 
 const getInternationalData = asyncWrapper(async (req, res) => {
   const dubai = await Dubai.find({});
@@ -32,12 +38,14 @@ const getInternationalData = asyncWrapper(async (req, res) => {
   const thailand = await Thailand.find({});
   const singapore = await Singapore.find({});
   const bhutan = await Bhutan.find({});
+  const nepal = await Nepal.find({});
   res.status(200).json({
     dubai,
     bali,
     thailand,
     singapore,
     bhutan,
+    nepal,
   });
 });
 
@@ -48,4 +56,5 @@ module.exports = {
   getThailandData,
   getSingaporeData,
   getBhutanData,
+  getNepalData,
 };
