@@ -18,6 +18,7 @@ const Thailand = require("../models/international/thailandData");
 const Singapore = require("../models/international/singaporeData");
 const Bhutan = require("../models/international/bhutanData");
 const Nepal = require("../models/international/nepalData");
+const Malaysia = require("../models/international/malaysiaData");
 
 const asyncWrapper = require("../middleware/async");
 
@@ -85,6 +86,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "nepal":
       collection = Nepal;
+      break;
+    case "malaysia":
+      collection = Malaysia;
       break;
     default:
       return res.status(404).json({ message: "Category not found" });
