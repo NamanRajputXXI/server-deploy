@@ -28,6 +28,7 @@ const {
   getBhutanData,
   getNepalData,
   getMalaysiaData,
+  getVietnamData,
 } = require("../controllers/international/internationData");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -55,6 +56,7 @@ router.route("/singapore").get(getSingaporeData);
 router.route("/bhutan").get(getBhutanData);
 router.route("/nepal").get(getNepalData);
 router.route("/malaysia").get(getMalaysiaData);
+router.route("/vietnam").get(getVietnamData);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
