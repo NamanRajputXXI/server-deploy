@@ -30,6 +30,9 @@ const {
   getMalaysiaData,
   getVietnamData,
 } = require("../controllers/international/internationData");
+const {
+  getWeekendTrendingData,
+} = require("../controllers/weekend/domestic/trendingExclusivePackage");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
 // routes for domestic destinations
@@ -57,6 +60,9 @@ router.route("/bhutan").get(getBhutanData);
 router.route("/nepal").get(getNepalData);
 router.route("/malaysia").get(getMalaysiaData);
 router.route("/vietnam").get(getVietnamData);
+
+//routes for the weekend trip
+router.route("/weekendTrip").get(getWeekendTrendingData);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
