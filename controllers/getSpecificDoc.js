@@ -20,6 +20,7 @@ const Bhutan = require("../models/international/bhutanData");
 const Nepal = require("../models/international/nepalData");
 const Malaysia = require("../models/international/malaysiaData");
 const Vietnam = require("../models/international/vietnamData");
+const WeekendTrip = require("../models/domestic/weekendTrendingData");
 
 const asyncWrapper = require("../middleware/async");
 
@@ -28,6 +29,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
 
   let collection;
   switch (category.toLowerCase()) {
+    case "weekendtrip":
+      collection = WeekendTrip;
+      break;
     case "rajasthan":
       collection = Rajasthan;
       break;
@@ -94,6 +98,7 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
     case "vietnam":
       collection = Vietnam;
       break;
+
     default:
       return res.status(404).json({ message: "Category not found" });
   }
