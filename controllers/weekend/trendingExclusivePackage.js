@@ -1,6 +1,6 @@
-const WeekendExclusivePackage = require("../../../models/domestic/weekendTrendingData");
+const WeekendExclusivePackage = require("../../models/domestic/weekendTrendingData");
 
-const asyncWrapper = require("../../../middleware/async");
+const asyncWrapper = require("../../middleware/async");
 
 const getWeekendTrendingData = asyncWrapper(async (req, res) => {
   const data = await WeekendExclusivePackage.find({});

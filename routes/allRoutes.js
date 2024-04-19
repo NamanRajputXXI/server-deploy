@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+// Controllers for the dometic states
 const {
   getRajasthanData,
   getHomeData,
@@ -19,6 +20,8 @@ const {
   getOdishaData,
   getLadakhData,
 } = require("../controllers/domestic/allStatesData");
+
+// controllers for the international destination
 const {
   getInternationalData,
   getDubaiData,
@@ -30,9 +33,17 @@ const {
   getMalaysiaData,
   getVietnamData,
 } = require("../controllers/international/internationData");
+
+// controller for the weekend trip
 const {
   getWeekendTrendingData,
-} = require("../controllers/weekend/domestic/trendingExclusivePackage");
+} = require("../controllers/weekend/trendingExclusivePackage");
+const {
+  getAllWeekendStateData,
+  getAndamanWeekend,
+  getGoaWeekend,
+  getKashmirWeekend,
+} = require("../controllers/weekend/domestic/domesticWeekend");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
 // routes for domestic destinations
@@ -61,8 +72,18 @@ router.route("/nepal").get(getNepalData);
 router.route("/malaysia").get(getMalaysiaData);
 router.route("/vietnam").get(getVietnamData);
 
-//routes for the weekend trip
+//!routes for the weekend trip
+
+// 1. Routes for the exclusive weekend
 router.route("/weekendTrip").get(getWeekendTrendingData);
+
+// 2. Routes for the all state weekend
+router.route("/allStateWeekend").get(getAllWeekendStateData);
+
+//3. Routes for the  state weekend
+router.route("/andamanWeekend").get(getAndamanWeekend);
+router.route("/goaWeekend").get(getGoaWeekend);
+router.route("/kashmirWeekend").get(getKashmirWeekend);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
