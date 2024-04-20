@@ -2,6 +2,7 @@ const asyncWrapper = require("../../../middleware/async");
 const WeekendAndaman = require("../../../models/weekend/domestic/andamanWeekendData");
 const WeekendGoa = require("../../../models/weekend/domestic/goaWeekendData");
 const WeekendKashmir = require("../../../models/weekend/domestic/kashmirWeekendData");
+const WeekendUttarakhand = require("../../../models/weekend/domestic/uttarakhandWeekendData");
 
 const getAndamanWeekend = asyncWrapper(async (req, res) => {
   const data = await WeekendAndaman.find({});
@@ -13,6 +14,10 @@ const getGoaWeekend = asyncWrapper(async (req, res) => {
 });
 const getKashmirWeekend = asyncWrapper(async (req, res) => {
   const data = await WeekendKashmir.find({});
+  res.status(200).json({ data });
+});
+const getUttarakhandWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendUttarakhand.find({});
   res.status(200).json({ data });
 });
 
@@ -29,6 +34,10 @@ const getAllWeekendStateData = asyncWrapper(async (req, res) => {
   res.status(200).json({
     weekendKashmir,
   });
+  const WeekendUttarakhand = await WeekendUttarakhand.find({});
+  res.status(200).json({
+    WeekendUttarakhand,
+  });
 });
 
 module.exports = {
@@ -36,4 +45,5 @@ module.exports = {
   getAndamanWeekend,
   getGoaWeekend,
   getKashmirWeekend,
+  getUttarakhandWeekend,
 };

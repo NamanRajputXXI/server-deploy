@@ -43,6 +43,7 @@ const {
   getAndamanWeekend,
   getGoaWeekend,
   getKashmirWeekend,
+  getUttarakhandWeekend,
 } = require("../controllers/weekend/domestic/domesticWeekend");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -84,6 +85,7 @@ router.route("/allStateWeekend").get(getAllWeekendStateData);
 router.route("/andamanWeekend").get(getAndamanWeekend);
 router.route("/goaWeekend").get(getGoaWeekend);
 router.route("/kashmirWeekend").get(getKashmirWeekend);
+router.route("/uttarakhandWeekend").get(getUttarakhandWeekend);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
