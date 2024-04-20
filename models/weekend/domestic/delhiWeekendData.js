@@ -12,7 +12,7 @@ const itinerarySchema = new mongoose.Schema({
   bulletPoints: [String],
 });
 
-const RajasthanWeekendSchema = new mongoose.Schema({
+const DelhiWeekendSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   heading: String,
   subHeading: String,
@@ -31,4 +31,4 @@ const RajasthanWeekendSchema = new mongoose.Schema({
   itinerary: [itinerarySchema],
 });
 
-module.exports = mongoose.model("RajasthanWeekend", RajasthanWeekendSchema);
+module.exports = mongoose.model("DelhiWeekend", DelhiWeekendSchema);

@@ -23,7 +23,7 @@ const {
 
 // controllers for the international destination
 const {
-  getInternationalData,
+  //!routes for the weekend trip  getInternationalData,
   getDubaiData,
   getBaliData,
   getThailandData,
@@ -32,6 +32,7 @@ const {
   getNepalData,
   getMalaysiaData,
   getVietnamData,
+  getInternationalData,
 } = require("../controllers/international/internationData");
 
 // controller for the weekend trip
@@ -40,12 +41,7 @@ const {
 } = require("../controllers/weekend/trendingExclusivePackage");
 const {
   getAllWeekendStateData,
-  getAndamanWeekend,
-  getGoaWeekend,
-  getKashmirWeekend,
-  getUttarakhandWeekend,
-  getRajasthanWeekend,
-  getWestBengalWeekend,
+  getDelhiWeekend,
 } = require("../controllers/weekend/domestic/domesticWeekend");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -75,8 +71,6 @@ router.route("/nepal").get(getNepalData);
 router.route("/malaysia").get(getMalaysiaData);
 router.route("/vietnam").get(getVietnamData);
 
-//!routes for the weekend trip
-
 // 1. Routes for the exclusive weekend
 router.route("/weekendTrip").get(getWeekendTrendingData);
 
@@ -84,12 +78,8 @@ router.route("/weekendTrip").get(getWeekendTrendingData);
 router.route("/allStateWeekend").get(getAllWeekendStateData);
 
 //3. Routes for the  state weekend
-router.route("/andamanWeekend").get(getAndamanWeekend);
-router.route("/goaWeekend").get(getGoaWeekend);
-router.route("/kashmirWeekend").get(getKashmirWeekend);
-router.route("/uttarakhandWeekend").get(getUttarakhandWeekend);
-router.route("/rajasthanWeekend").get(getRajasthanWeekend);
-router.route("/westBengalWeekend").get(getWestBengalWeekend);
+
+router.route("/delhiWeekend").get(getDelhiWeekend);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
