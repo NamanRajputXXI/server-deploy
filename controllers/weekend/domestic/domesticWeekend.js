@@ -3,6 +3,7 @@ const WeekendDelhi = require("../../../models/weekend/domestic/delhiWeekendData"
 const WeekendMumbai = require("../../../models/weekend/domestic/mumbaiWeekendData");
 const WeekendChennai = require("../../../models/weekend/domestic/chennaiWeekendData");
 const WeekendBangalore = require("../../../models/weekend/domestic/bangaloreWeekendData");
+const WeekendNagpur = require("../../../models/weekend/domestic/nagpurWeekendData");
 
 const getDelhiWeekend = asyncWrapper(async (req, res) => {
   const data = await WeekendDelhi.find({});
@@ -18,6 +19,10 @@ const getChennaiWeekend = asyncWrapper(async (req, res) => {
 });
 const getBangaloreWeekend = asyncWrapper(async (req, res) => {
   const data = await WeekendBangalore.find({});
+  res.status(200).json({ data });
+});
+const getNagpurWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendNagpur.find({});
   res.status(200).json({ data });
 });
 
@@ -38,6 +43,10 @@ const getAllWeekendStateData = asyncWrapper(async (req, res) => {
   res.status(200).json({
     WeekendBangalore,
   });
+  const WeekendNagpur = await WeekendBangalore.find({});
+  res.status(200).json({
+    WeekendBangalore,
+  });
 });
 
 module.exports = {
@@ -46,4 +55,5 @@ module.exports = {
   getMumbaiWeekend,
   getChennaiWeekend,
   getBangaloreWeekend,
+  getNagpurWeekend,
 };

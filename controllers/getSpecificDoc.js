@@ -24,6 +24,8 @@ const WeekendTrip = require("../models/domestic/weekendTrendingData");
 const DelhiWeekend = require("../models/weekend/domestic/delhiWeekendData");
 const MumbaiWeekend = require("../models/weekend/domestic/mumbaiWeekendData");
 const ChennaiWeekend = require("../models/weekend/domestic/chennaiWeekendData");
+const BangaloreWeekend = require("../models/weekend/domestic/bangaloreWeekendData");
+const NagpurWeekend = require("../models/weekend/domestic/nagpurWeekendData");
 
 const asyncWrapper = require("../middleware/async");
 
@@ -111,6 +113,12 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "chennaiweekend":
       collection = ChennaiWeekend;
+      break;
+    case "bangaloreweekend":
+      collection = BangaloreWeekend;
+      break;
+    case "nagpurweekend":
+      collection = NagpurWeekend;
       break;
 
     default:
