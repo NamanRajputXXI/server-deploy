@@ -23,6 +23,7 @@ const Vietnam = require("../models/international/vietnamData");
 const WeekendTrip = require("../models/domestic/weekendTrendingData");
 const DelhiWeekend = require("../models/weekend/domestic/delhiWeekendData");
 const MumbaiWeekend = require("../models/weekend/domestic/mumbaiWeekendData");
+const ChennaiWeekend = require("../models/weekend/domestic/chennaiWeekendData");
 
 const asyncWrapper = require("../middleware/async");
 
@@ -107,6 +108,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "mumbaiweekend":
       collection = MumbaiWeekend;
+      break;
+    case "chennaiweekend":
+      collection = ChennaiWeekend;
       break;
 
     default:

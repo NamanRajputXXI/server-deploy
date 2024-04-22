@@ -43,6 +43,7 @@ const {
   getAllWeekendStateData,
   getDelhiWeekend,
   getMumbaiWeekend,
+  getChennaiWeekend,
 } = require("../controllers/weekend/domestic/domesticWeekend");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -82,6 +83,7 @@ router.route("/allStateWeekend").get(getAllWeekendStateData);
 
 router.route("/delhiWeekend").get(getDelhiWeekend);
 router.route("/mumbaiWeekend").get(getMumbaiWeekend);
+router.route("/chennaiWeekend").get(getChennaiWeekend);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
