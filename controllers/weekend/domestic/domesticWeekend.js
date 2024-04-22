@@ -5,6 +5,11 @@ const WeekendChennai = require("../../../models/weekend/domestic/chennaiWeekendD
 const WeekendBangalore = require("../../../models/weekend/domestic/bangaloreWeekendData");
 const WeekendNagpur = require("../../../models/weekend/domestic/nagpurWeekendData");
 const WeekendHydrabad = require("../../../models/weekend/domestic/hydrabadWeekendData");
+const WeekendAhmedabad = require("../../../models/weekend/domestic/ahmedabadWeekendData");
+const WeekendChandigarh = require("../../../models/weekend/domestic/chandigarhWeekendData");
+const WeekendCochin = require("../../../models/weekend/domestic/cochinWeekendData");
+const WeekendPune = require("../../../models/weekend/domestic/puneWeekendData");
+const WeekendJaipur = require("../../../models/weekend/domestic/jaipurWeekendData");
 
 const getDelhiWeekend = asyncWrapper(async (req, res) => {
   const data = await WeekendDelhi.find({});
@@ -28,6 +33,26 @@ const getNagpurWeekend = asyncWrapper(async (req, res) => {
 });
 const getHydrabadWeekend = asyncWrapper(async (req, res) => {
   const data = await WeekendHydrabad.find({});
+  res.status(200).json({ data });
+});
+const getAhmedabadWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendAhmedabad.find({});
+  res.status(200).json({ data });
+});
+const getChandigarhWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendChandigarh.find({});
+  res.status(200).json({ data });
+});
+const getPuneWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendPune.find({});
+  res.status(200).json({ data });
+});
+const getJaipurWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendJaipur.find({});
+  res.status(200).json({ data });
+});
+const getCochinWeekend = asyncWrapper(async (req, res) => {
+  const data = await WeekendCochin.find({});
   res.status(200).json({ data });
 });
 
@@ -56,6 +81,26 @@ const getAllWeekendStateData = asyncWrapper(async (req, res) => {
   res.status(200).json({
     WeekendHydrabad,
   });
+  const WeekendAhmedabad = await WeekendAhmedabad.find({});
+  res.status(200).json({
+    WeekendAhmedabad,
+  });
+  const WeekendChandigarh = await WeekendChandigarh.find({});
+  res.status(200).json({
+    WeekendChandigarh,
+  });
+  const WeekendPune = await WeekendPune.find({});
+  res.status(200).json({
+    WeekendPune,
+  });
+  const WeekendJaipur = await WeekendJaipur.find({});
+  res.status(200).json({
+    WeekendJaipur,
+  });
+  const WeekendCochin = await WeekendCochin.find({});
+  res.status(200).json({
+    WeekendCochin,
+  });
 });
 
 module.exports = {
@@ -66,4 +111,9 @@ module.exports = {
   getBangaloreWeekend,
   getNagpurWeekend,
   getHydrabadWeekend,
+  getAhmedabadWeekend,
+  getChandigarhWeekend,
+  getPuneWeekend,
+  getJaipurWeekend,
+  getCochinWeekend,
 };

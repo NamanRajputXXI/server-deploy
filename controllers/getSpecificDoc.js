@@ -27,6 +27,11 @@ const ChennaiWeekend = require("../models/weekend/domestic/chennaiWeekendData");
 const BangaloreWeekend = require("../models/weekend/domestic/bangaloreWeekendData");
 const NagpurWeekend = require("../models/weekend/domestic/nagpurWeekendData");
 const HydrabadWeekend = require("../models/weekend/domestic/hydrabadWeekendData");
+const CochinWeekend = require("../models/weekend/domestic/cochinWeekendData");
+const PuneWeekend = require("../models/weekend/domestic/puneWeekendData");
+const AhmedabadWeekend = require("../models/weekend/domestic/ahmedabadWeekendData");
+const JaipurWeekend = require("../models/weekend/domestic/jaipurWeekendData");
+const ChandigarhWeekend = require("../models/weekend/domestic/chandigarhWeekendData");
 
 const asyncWrapper = require("../middleware/async");
 
@@ -123,6 +128,21 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
       break;
     case "hydrabadweekend":
       collection = HydrabadWeekend;
+      break;
+    case "chandigarhweekend":
+      collection = ChandigarhWeekend;
+      break;
+    case "puneweekend":
+      collection = PuneWeekend;
+      break;
+    case "ahmedabadweekend":
+      collection = AhmedabadWeekend;
+      break;
+    case "cochinweekend":
+      collection = CochinWeekend;
+      break;
+    case "jaipurweekend":
+      collection = JaipurWeekend;
       break;
 
     default:

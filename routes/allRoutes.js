@@ -47,6 +47,11 @@ const {
   getBangaloreWeekend,
   getNagpurWeekend,
   getHydrabadWeekend,
+  getCochinWeekend,
+  getPuneWeekend,
+  getChandigarhWeekend,
+  getAhmedabadWeekend,
+  getJaipurWeekend,
 } = require("../controllers/weekend/domestic/domesticWeekend");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -90,6 +95,11 @@ router.route("/chennaiWeekend").get(getChennaiWeekend);
 router.route("/bangaloreWeekend").get(getBangaloreWeekend);
 router.route("/nagpurWeekend").get(getNagpurWeekend);
 router.route("/hydrabadWeekend").get(getHydrabadWeekend);
+router.route("/jaipurWeekend").get(getJaipurWeekend);
+router.route("/puneWeekend").get(getPuneWeekend);
+router.route("/ahmedabadWeekend").get(getAhmedabadWeekend);
+router.route("/cochinWeekend").get(getCochinWeekend);
+router.route("/chandigarhWeekend").get(getChandigarhWeekend);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
