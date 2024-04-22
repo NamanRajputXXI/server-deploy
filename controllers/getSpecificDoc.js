@@ -22,6 +22,7 @@ const Malaysia = require("../models/international/malaysiaData");
 const Vietnam = require("../models/international/vietnamData");
 const WeekendTrip = require("../models/domestic/weekendTrendingData");
 const DelhiWeekend = require("../models/weekend/domestic/delhiWeekendData");
+const MumbaiWeekend = require("../models/weekend/domestic/mumbaiWeekendData");
 
 const asyncWrapper = require("../middleware/async");
 
@@ -103,6 +104,9 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
     // Case for weekend State wise routes
     case "delhiweekend":
       collection = DelhiWeekend;
+      break;
+    case "mumbaiweekend":
+      collection = MumbaiWeekend;
       break;
 
     default:

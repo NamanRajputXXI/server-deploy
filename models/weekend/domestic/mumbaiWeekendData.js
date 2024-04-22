@@ -11,7 +11,7 @@ const itinerarySchema = new mongoose.Schema({
   heading: String,
 });
 
-const DelhiWeekendSchema = new mongoose.Schema({
+const MumbaiWeekendSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   heading: String,
   subHeading: String,
@@ -27,4 +27,4 @@ const DelhiWeekendSchema = new mongoose.Schema({
   itinerary: [itinerarySchema],
 });
 
-module.exports = mongoose.model("delhiWeekend", DelhiWeekendSchema);
+module.exports = mongoose.model("mumbaiWeekend", MumbaiWeekendSchema);

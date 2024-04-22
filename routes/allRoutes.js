@@ -42,6 +42,7 @@ const {
 const {
   getAllWeekendStateData,
   getDelhiWeekend,
+  getMumbaiWeekend,
 } = require("../controllers/weekend/domestic/domesticWeekend");
 const { getSpecificDocument } = require("../controllers/getSpecificDoc");
 
@@ -80,6 +81,7 @@ router.route("/allStateWeekend").get(getAllWeekendStateData);
 //3. Routes for the  state weekend
 
 router.route("/delhiWeekend").get(getDelhiWeekend);
+router.route("/mumbaiWeekend").get(getMumbaiWeekend);
 
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
