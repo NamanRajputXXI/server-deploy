@@ -126,7 +126,7 @@ const getSpecificDocument = asyncWrapper(async (req, res) => {
     case "nagpurweekend":
       collection = NagpurWeekend;
       break;
-    case "hydrabadweekend":
+    case "hyderabadweekend":
       collection = HydrabadWeekend;
       break;
     case "chandigarhweekend":
