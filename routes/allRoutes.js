@@ -94,7 +94,7 @@ router.route("/mumbaiWeekend").get(getMumbaiWeekend);
 router.route("/chennaiWeekend").get(getChennaiWeekend);
 router.route("/bangaloreWeekend").get(getBangaloreWeekend);
 router.route("/nagpurWeekend").get(getNagpurWeekend);
-router.route("/hydrabadWeekend").get(getHydrabadWeekend);
+router.route("/hyderabadWeekend").get(getHydrabadWeekend);
 router.route("/jaipurWeekend").get(getJaipurWeekend);
 router.route("/puneWeekend").get(getPuneWeekend);
 router.route("/ahmedabadWeekend").get(getAhmedabadWeekend);
