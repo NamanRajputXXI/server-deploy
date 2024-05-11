@@ -45,6 +45,9 @@ const {
   kashmirHotelsData,
 } = require("../controllers/domestic/HotesData/kashmirHotels");
 const {
+  andamanHotelsData,
+} = require("../controllers/domestic/HotesData/andamanHotels");
+const {
   getAllWeekendStateData,
   getDelhiWeekend,
   getMumbaiWeekend,
@@ -112,5 +115,6 @@ router.route("/").get(getHomeData);
 
 // Routes for Hotels Data
 router.route("/kashmirHotelsData").get(kashmirHotelsData);
+router.route("/andamanHotelsData").get(andamanHotelsData);
 
 module.exports = router;
