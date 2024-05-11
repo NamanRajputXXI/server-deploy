@@ -39,6 +39,11 @@ const {
 const {
   getWeekendTrendingData,
 } = require("../controllers/weekend/trendingExclusivePackage");
+
+// Controller for the Hotels Data
+const {
+  kashmirHotelsData,
+} = require("../controllers/domestic/HotesData/kashmirHotels");
 const {
   getAllWeekendStateData,
   getDelhiWeekend,
@@ -100,10 +105,12 @@ router.route("/puneWeekend").get(getPuneWeekend);
 router.route("/ahmedabadWeekend").get(getAhmedabadWeekend);
 router.route("/cochinWeekend").get(getCochinWeekend);
 router.route("/chandigarhWeekend").get(getChandigarhWeekend);
-
 router.route("/allStatesData").get(getAllStatesData);
 router.route("/internationalData").get(getInternationalData);
 router.route("/:category/:index").get(getSpecificDocument);
 router.route("/").get(getHomeData);
+
+// Routes for Hotels Data
+router.route("/kashmirHotelsData").get(kashmirHotelsData);
 
 module.exports = router;
